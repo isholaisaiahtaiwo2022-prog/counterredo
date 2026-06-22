@@ -41,6 +41,14 @@ class _StopWatchState extends State<StopWatch> {
     });
   }
 
+  void toogle() {
+    if (isRunning) {
+      stopWatch();
+    } else {
+      stopWatch();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,7 +80,7 @@ class _StopWatchState extends State<StopWatch> {
 
                       children: [
                         const SizedBox(height: 40),
-                        
+
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             elevation: 10,
@@ -82,11 +90,19 @@ class _StopWatchState extends State<StopWatch> {
                             maximumSize: Size(300, 300),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
-                            )
+                            ),
                           ),
-                           onPressed: startWatch, child: Text("Start",
-                           style: TextStyle(fontSize: 50,
-                           fontWeight: FontWeight.bold),))
+                          onPressed: startWatch,
+                          child: Text(
+                            "Start",
+                            style: TextStyle(
+                              fontSize: 50,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+
+                        SizedBox(height: 20),
                       ],
                     ),
                   ),
@@ -99,4 +115,3 @@ class _StopWatchState extends State<StopWatch> {
     );
   }
 }
-
