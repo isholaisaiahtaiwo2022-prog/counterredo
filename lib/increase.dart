@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Stopwatch.dart';
 
 class Increase extends StatefulWidget {
   const Increase({super.key});
@@ -161,6 +162,20 @@ class _IncreaseState extends State<Increase> {
                             foregroundColor: Colors.black,
                           ),
                           child: Text("Reset"),
+                        ),
+
+                        SizedBox(height: 20),
+
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const StopWatch(),
+                              ),
+                            );
+                          },
+                          child: const Text("Stopwatch"),
                         ),
                       ],
                     ),
